@@ -1,1 +1,1 @@
-this is a sample play project.
+This is a sample play project using Slick.
