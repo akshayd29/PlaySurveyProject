@@ -1,0 +1,36 @@
+@(users : List[User], answers : List[Answers])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<label>Some answers to your questions : </label><br/>
+
+@for(ans <- answers){
+
+<label><b>@users(users.length-1).start</b></label><br/>
+
+<label>@ans.startQuestion</label><br/><br/>
+
+<label><b>@users(users.length-1).stop</b></label><br/>
+
+<label>@ans.stopQuestion</label><br/><br/>
+
+<label><b>@users(users.length-1).continue</b></label><br/>
+
+<label>@ans.continueQuestion</label><br/><br/>
+
+}
+@import play.api.Play.current
+<footer>
+    <!--user = @current.configuration.getString("environment.user"),-->
+    date = @(new java.util.Date().format("yyyy-MM-dd HH:mm"))
+</footer>
+
+<input type="button" value="Reload Page" onClick="window.location.reload()">
+
+
+</body>
+</html>

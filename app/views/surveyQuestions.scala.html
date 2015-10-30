@@ -1,0 +1,33 @@
+@(users : List[User])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<form action="/surveyQ/done" method="post">
+    <div>
+        @users(users.length-1).name, asks you to complete this short survey
+    </div>
+
+    <div>
+        <b>Your Name </b><br/>
+        <input type="text" name="name" required/> <br/>
+        <input type="hidden" name="email" value="@users(users.length-1).email">
+        <label>@users(users.length-1).start</label> <br/>
+        <textarea name="startQuestion" rows="3" required></textarea> <br/>
+        <label>@users(users.length-1).stop</label> <br/>
+        <textarea name="stopQuestion" rows="3" required></textarea> <br/>
+        <label>@users(users.length-1).continue</label> <br/>
+        <textarea name="continueQuestion" rows="3" required></textarea> <br/>
+    </div>
+
+    <div>
+        <input type="submit" value="Submit your Answer">
+    </div>
+
+</form>
+</body>
+</html>

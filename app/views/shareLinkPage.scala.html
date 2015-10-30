@@ -1,0 +1,35 @@
+@(user : User)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>
+
+    <b>@user.name, share this link to get answers</b> <br/>
+    <a href="surveyQ/email=@user.email" target="_blank">Share this Link to get Answers</a>
+</div>
+
+<div>
+    <b>Survey</b>
+    <table border="2">
+        <tr>
+            <td>link to answers</td>
+            <td><a href="surveyAns/email=@user.email" target="_self">Answers</a></td>
+        </tr>
+        <tr>
+            <td>no of answers</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Your Name</td>
+            <td>@user.name</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

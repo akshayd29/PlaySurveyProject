@@ -1,0 +1,17 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index
+
+POST    /answers                    controllers.Application.insertQuestions
+
+GET    /surveyAns/email=:email      controllers.Application.surveyAnswers(email : String)
+
+GET    /surveyQ/email=:email        controllers.Application.surveyQuestions(email : String)
+
+POST    /surveyQ/done               controllers.Application.doneAnswering
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file)
