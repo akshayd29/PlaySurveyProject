@@ -31,8 +31,8 @@ object QuestionAnswer extends Controller{
         },
         answers => {
           val answer = answerForm.bindFromRequest.get
-          val as = new QuestionAnswerService
-          as.insertAnswers(answer)(session)
+          val qaServiceObj = new QuestionAnswerService
+          qaServiceObj.insertAnswers(answer)(session)
 
           Ok(views.html.finalPage("Survey Completed Successfully..!"))
         }
