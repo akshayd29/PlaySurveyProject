@@ -5,13 +5,13 @@
 # Home page
 GET     /                           controllers.Application.index
 
-POST    /answers                    controllers.Application.insertQuestions
+POST    /answers                    controllers.Users.insertUserQuestions
 
 GET    /surveyAns/email=:email      controllers.Application.surveyAnswers(email : String)
 
-GET    /surveyQ/email=:email        controllers.Application.surveyQuestions(email : String)
+GET    /surveyQ/email=:email        controllers.Users.surveyQuestions(email : String)
 
-POST    /surveyQ/done               controllers.Application.doneAnswering
+POST    /surveyQ/done               controllers.QuestionAnswer.doneAnswering
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file)
