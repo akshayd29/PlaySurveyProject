@@ -30,7 +30,6 @@ object Users extends Controller{
         },
         user => {
           val user = userForm.bindFromRequest.get
-        //  val userServiceObj = new UserService
           UserService.insertUser(user)(session)
 
           Ok(views.html.shareLinkPage(user))
@@ -41,7 +40,6 @@ object Users extends Controller{
   def surveyQuestions(email : String) = DBAction {
     implicit request => {
       val session = request.dbSession
-    //  val userServiceObj = new UserService
       val userList : List[User] = UserService.filterUser(email)(session)
 
       Ok(views.html.surveyQuestions(userList))

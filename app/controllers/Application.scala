@@ -14,9 +14,7 @@ object Application extends Controller {
   def surveyAnswers(email : String) = DBAction{
     implicit request => {
       val session = request.dbSession
-    //  val userServiceObj = new UserService
       val userList : List[User] = UserService.filterUser(email)(session)
-    //  val qaServiceObj = new QuestionAnswerService
       val answerList : List[Answers] = QuestionAnswerService.filterAnswers(email)(session)
 
       Ok(views.html.surveyAnswers(userList, answerList))
