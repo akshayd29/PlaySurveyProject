@@ -12,7 +12,6 @@ class UserService {
   }
 
   def filterUser(email : String)(implicit session: Session) : List[User] = {
-    val userList : List[User] = users.list.filter(_.email == email)
-    userList
+    users.list.filter(_.email == email)
   }
 }

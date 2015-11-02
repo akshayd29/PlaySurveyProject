@@ -12,7 +12,6 @@ class QuestionAnswerService {
   }
 
   def filterAnswers(email : String)(implicit session: Session) : List[Answers] = {
-    val answerList : List[Answers] = answers.list.filter(_.email == email)
-    answerList
+    answers.list.filter(_.email == email)
   }
 }
