@@ -5,7 +5,7 @@ import models.User
 import play.api.db.slick.Config.driver.simple._
 import play.api.db.slick.Session
 
-class UserService {
+object UserService {
 
   def insertUser(user : User)(implicit session: Session) = {
     users.insert(user)

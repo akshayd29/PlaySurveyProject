@@ -5,7 +5,7 @@ import models.Answers
 import play.api.db.slick.Config.driver.simple._
 import play.api.db.slick.Session
 
-class QuestionAnswerService {
+object QuestionAnswerService {
 
   def insertAnswers(answer : Answers)(implicit session: Session) = {
     answers.insert(answer)
