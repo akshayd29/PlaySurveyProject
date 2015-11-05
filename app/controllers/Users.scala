@@ -46,5 +46,27 @@ object Users extends Controller{
     }
   }
 
+  def updateUserForm(email : String) = DBAction {
+    implicit request => {
+      val session = request.dbSession
+      val userList: List[User] = UserService.filterUser(email)(session)
+      Ok(views.html.userUpdateForm(userList))
+    }
+  }
 
+  def updatedUserQuestions = DBAction{
+    implicit request => {
+      val session = request.dbSession
+      userForm.bindFromRequest.fold(
+        formWithErrors => {
+          BadRequest(views.html.main())
+        },
+        updatedUser => {
+          val updated = userForm.bindFromRequest.get
+          UserService.updateUser(updated)(session)
+          Ok(views.html.shareLinkPage(updated))
+        }
+      )
+    }
+  }
 }

@@ -9,9 +9,19 @@ POST    /answers                    controllers.Users.insertUserQuestions
 
 GET    /surveyAns/email=:email      controllers.Application.surveyAnswers(email : String)
 
+GET    /updateQ/surveyQ/email=:email    controllers.Users.surveyQuestions(email : String)
+
+GET    /updateQ/surveyAns/email=:email   controllers.Application.surveyAnswers(email : String)
+
 GET    /surveyQ/email=:email        controllers.Users.surveyQuestions(email : String)
 
+GET    /updateQ/email=:email        controllers.Users.updateUserForm(email : String)
+
+POST   /updateQ/updateQuestions     controllers.Users.updatedUserQuestions
+
 POST    /surveyQ/done               controllers.QuestionAnswer.doneAnswering
+
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file)

@@ -1,0 +1,27 @@
+@(user : List[User])
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Questions</title>
+</head>
+<body>
+<form action="updateQuestions" method="post">
+    <div><b>Name </b>
+        <input type="text" name="name" placeholder="@user(user.length-1).name" value="@user(user.length-1).name" readonly/></div>
+    <div>
+        Question 1. <b>START</b> <br/>
+        <input type="text" name="start" size="35" value="What should I start doing?" placeholder="@user(user.length-1).start"/> <br/>
+        Question 2. <b>STOP</b> <br/>
+        <input type="text" name="stop" size="35" placeholder="@user(user.length-1).stop" value="What should I stop doing?"/> <br/>
+        Question 3. <b>CONTINUE</b> <br/>
+        <input type="text" name="continue" size="35" placeholder="@user(user.length-1).continue" value="What should I continue doing?"/><br/>
+        <input type="hidden" name="email" value="@user(user.length-1).email" required="required"> <br/>
+    </div>
+
+    <div><input type="submit" value="Update"/></div>
+
+</form>
+</body>
+</html>

@@ -14,4 +14,8 @@ object UserService {
   def filterUser(email : String)(implicit session: Session) : List[User] = {
     users.list.filter(_.email == email)
   }
+
+  def updateUser(user : User)(implicit session: Session) = {
+    users.update(user)
+  }
 }
