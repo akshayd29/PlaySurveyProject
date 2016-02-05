@@ -1,6 +1,6 @@
 package services
 
-import controllers.Users._
+import controllers.UserController._
 import models.User
 import play.api.db.slick.Config.driver.simple._
 import play.api.db.slick.Session

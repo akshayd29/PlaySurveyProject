@@ -8,7 +8,7 @@ import play.api.mvc.Controller
 import services.{QuestionAnswerService}
 import scala.slick.lifted.TableQuery
 
-object QuestionAnswer extends Controller{
+object QuestionAnswerController extends Controller{
 
   val answers = TableQuery[AnswersTable]
 

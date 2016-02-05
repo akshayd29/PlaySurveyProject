@@ -1,6 +1,6 @@
 package services
 
-import controllers.QuestionAnswer._
+import controllers.QuestionAnswerController._
 import models.Answers
 import play.api.db.slick.Config.driver.simple._
 import play.api.db.slick.Session

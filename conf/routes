@@ -3,23 +3,23 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index
+GET     /                                controllers.Application.index
 
-POST    /answers                    controllers.Users.insertUserQuestions
+POST    /answers                         controllers.UserController.insertUserQuestions
 
-GET    /surveyAns/email=:email      controllers.Application.surveyAnswers(email : String)
+GET    /surveyAns/email=:email           controllers.Application.surveyAnswers(email : String)
 
-GET    /updateQ/surveyQ/email=:email    controllers.Users.surveyQuestions(email : String)
+GET    /updateQ/surveyQ/email=:email     controllers.UserController.surveyQuestions(email : String)
 
 GET    /updateQ/surveyAns/email=:email   controllers.Application.surveyAnswers(email : String)
 
-GET    /surveyQ/email=:email        controllers.Users.surveyQuestions(email : String)
+GET    /surveyQ/email=:email             controllers.UserController.surveyQuestions(email : String)
 
-GET    /updateQ/email=:email        controllers.Users.updateUserForm(email : String)
+GET    /updateQ/email=:email             controllers.UserController.updateUserForm(email : String)
 
-POST   /updateQ/updateQuestions     controllers.Users.updatedUserQuestions
+POST   /updateQ/updateQuestions          controllers.UserController.updatedUserQuestions
 
-POST    /surveyQ/done               controllers.QuestionAnswer.doneAnswering
+POST    /surveyQ/done                    controllers.QuestionAnswerController.doneAnswering
 
 
 

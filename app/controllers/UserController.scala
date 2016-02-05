@@ -8,7 +8,7 @@ import play.api.mvc.Controller
 import services.{UserService}
 import scala.slick.lifted.TableQuery
 
-object Users extends Controller{
+object UserController extends Controller{
 
   val users = TableQuery[UserTable]
 
@@ -18,7 +18,6 @@ object Users extends Controller{
     "stop" -> text,
     "continue" -> text,
     "email" -> nonEmptyText)(User.apply)(User.unapply))
-
 
   def insertUserQuestions = DBAction {
     implicit request => {
@@ -31,7 +30,6 @@ object Users extends Controller{
         user => {
           val user = userForm.bindFromRequest.get
           UserService.insertUser(user)(session)
-
           Ok(views.html.shareLinkPage(user))
         })
     }
@@ -41,7 +39,6 @@ object Users extends Controller{
     implicit request => {
       val session = request.dbSession
       val userList : List[User] = UserService.filterUser(email)(session)
-
       Ok(views.html.surveyQuestions(userList))
     }
   }
